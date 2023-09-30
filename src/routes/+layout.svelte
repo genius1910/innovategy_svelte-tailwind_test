@@ -15,13 +15,13 @@
 		<div class="flex-none">
 			<Header />
 		</div>
-		<div class="flex w-full flex-1 pt-[115px] h-96">
+		<div class="flex w-full flex-1 pt-[115px] h-1">
 			{#if route != '/ideas/create'}
 				<div class="flex-none border-r hidden md:block">
 					<Navbar />
 				</div>
 			{/if}
-			<div class="flex-1 overflow-auto">
+			<div class="flex-1 overflow-auto pb-6">
 				<slot />
 			</div>
 		</div>

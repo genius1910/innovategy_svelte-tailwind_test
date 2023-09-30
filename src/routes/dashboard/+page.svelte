@@ -20,7 +20,7 @@
 			<div
 				role="button"
 				tabindex=""
-				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
+				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
 					$select == 'clients' ? 'bg-[#CFFBF7]' : 'bg-white'
 				}`}
 				on:click={() => setSelect('clients')}
@@ -38,7 +38,7 @@
 			<div
 				role="button"
 				tabindex=""
-				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
+				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
 					$select == 'business' ? 'bg-[#CFFBF7]' : 'bg-white'
 				}`}
 				on:click={() => setSelect('business')}

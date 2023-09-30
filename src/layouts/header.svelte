@@ -5,6 +5,7 @@
 	import Navbar from './navbar.svelte';
 	let menuState = false;
 	let navState = false;
+	import { goto } from '$app/navigation';
 </script>
 
 <svelte:head>
@@ -18,9 +19,15 @@
 		class="text-[#000] text-2xl block md:hidden"
 		role="button"
 		tabindex=""
-		on:click={() => (navState = !navState)}
+		on:click={() => {
+			navState = !navState;
+			menuState = false;
+		}}
 		on:keydown={(e) => {
-			if (e.key === 'Enter') navState = !navState;
+			if (e.key === 'Enter') {
+				navState = !navState;
+				menuState = false;
+			}
 		}}
 	>
 		{#if navState}
@@ -30,14 +37,20 @@
 		{/if}
 	</div>
 	<div
-		class={`absolute top-32 left-3 ${
+		class={`absolute top-32 left-3 md:hidden ${
 			navState ? 'block' : 'hidden'
 		} bg-white rounded-lg pb-4 border-4 border-zinc-800`}
 		role="button"
 		tabindex=""
-		on:click={() => (navState = !navState)}
+		on:click={() => {
+			navState = !navState;
+			menuState = false;
+		}}
 		on:keydown={(e) => {
-			if (e.key === 'Enter') navState = !navState;
+			if (e.key === 'Enter') {
+				navState = !navState;
+				menuState = false;
+			}
 		}}
 	>
 		<Navbar />
@@ -49,9 +62,15 @@
 		class="text-[#000] text-2xl block md:hidden"
 		role="button"
 		tabindex=""
-		on:click={() => (menuState = !menuState)}
+		on:click={() => {
+			menuState = !menuState;
+			navState = false;
+		}}
 		on:keydown={(e) => {
-			if (e.key === 'Enter') menuState = !menuState;
+			if (e.key === 'Enter') {
+				menuState = !menuState;
+				navState = false;
+			}
 		}}
 	>
 		{#if menuState}
@@ -65,29 +84,41 @@
 			<img src={helpCircle} alt="SvelteKit" />
 			<p class="normal-font">Need Help?</p>
 		</div>
-		<a href="/signin" class="flex flex-row justify-center items-center gap-2 cursor-pointer">
+		<button
+			on:click={() => goto('/signin')}
+			class="flex flex-row justify-center items-center gap-2 cursor-pointer"
+		>
 			<img src={user} alt="SvelteKit" />
 			<p class="normal-font hover:outline-none">Sign Up</p>
-		</a>
+		</button>
 	</div>
 	<div
-		class={`absolute top-32 right-3 ${
+		class={`absolute top-32 right-3 md:hidden ${
 			menuState ? 'block' : 'hidden'
 		} bg-white rounded-lg p-4 border-4 border-zinc-800 flex flex-col gap-4`}
 		role="button"
 		tabindex=""
-		on:click={() => (menuState = !menuState)}
+		on:click={() => {
+			menuState = !menuState;
+			navState = false;
+		}}
 		on:keydown={(e) => {
-			if (e.key === 'Enter') menuState = !menuState;
+			if (e.key === 'Enter') {
+				menuState = !menuState;
+				navState = false;
+			}
 		}}
 	>
 		<div class="flex flex-row justify-start items-center gap-2 cursor-pointer">
 			<img src={helpCircle} alt="SvelteKit" />
 			<p class="normal-font">Need Help?</p>
 		</div>
-		<a href="/signin" class="flex flex-row justify-start items-center gap-2 cursor-pointer">
+		<button
+			on:click={() => goto('/signin')}
+			class="flex flex-row justify-start items-center gap-2 cursor-pointer"
+		>
 			<img src={user} alt="SvelteKit" />
 			<p class="normal-font hover:outline-none">Sign Up</p>
-		</a>
+		</button>
 	</div>
 </div>
