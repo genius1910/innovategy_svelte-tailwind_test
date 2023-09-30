@@ -65,7 +65,7 @@
 				$page.url.pathname.includes(menu.key) ? 'bg-[#F6F6F6]' : ''
 			}`}
 		>
-			<img src={'/src/lib/images/' + menu.img + '.svg'} alt="SvelteKit" />
+			<img src={'/images/' + menu.img + '.svg'} alt="SvelteKit" />
 			<p class="p-2">{menu.title}</p>
 		</div>
 	{/each}
