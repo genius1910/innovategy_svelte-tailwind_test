@@ -1,53 +1,37 @@
 <script>
-	import Header from './Header.svelte';
 	import './styles.css';
+	import { page } from '$app/stores';
+	import Footer from '../layouts/footer.svelte';
+	import Header from '../layouts/header.svelte';
+	import Navbar from '../layouts/navbar.svelte';
+	let route;
+	$: route = $page.url.pathname;
 </script>
 
-<div class="app">
-	<Header />
-
-	<main>
+<div class="app flex min-w-full min-h-full flex-col h-screen bg-white">
+	{#if route == '/' || route == '/signin' || route == '/signup'}
 		<slot />
-	</main>
-
-	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-	</footer>
+	{:else}
+		<div class="flex-none">
+			<Header />
+		</div>
+		<div class="flex w-full flex-1 pt-[115px] h-96">
+			{#if route != '/ideas/create'}
+				<div class="flex-none border-r hidden md:block">
+					<Navbar />
+				</div>
+			{/if}
+			<div class="flex-1 overflow-auto">
+				<slot />
+			</div>
+		</div>
+		{#if route != '/ideas/create'}
+			<div class="flex-none">
+				<Footer />
+			</div>
+		{/if}
+	{/if}
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>
