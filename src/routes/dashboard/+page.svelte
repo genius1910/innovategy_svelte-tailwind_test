@@ -20,7 +20,7 @@
 			<div
 				role="button"
 				tabindex=""
-				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
+				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] duration-500 rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
 					$select == 'clients' ? 'bg-[#CFFBF7]' : 'bg-white'
 				}`}
 				on:click={() => setSelect('clients')}
@@ -38,7 +38,7 @@
 			<div
 				role="button"
 				tabindex=""
-				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
+				class={`w-full sm:w-[369px] py-4 gap-[2px] border border-[#DEDEDE] hover:bg-[#dcfdfa] duration-500 rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] ${
 					$select == 'business' ? 'bg-[#CFFBF7]' : 'bg-white'
 				}`}
 				on:click={() => setSelect('business')}
@@ -55,14 +55,12 @@
 			</div>
 		</div>
 		<div class="flex flex-row xl:justify-end justify-center gap-4 w-full">
+			<button class="normal-active-button text-[#2B3E59] bg-white hover:bg-slate-100"> Cancle </button>
 			<button
-				class="py-2 px-4 border rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] border-[#CACFD5] text-[14px] leading-6 font-medium text-[#2B3E59]"
-			>
-				Cancle
-			</button>
-			<button
-				class={`py-2 px-4 border rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] border-[#CACFD5] text-[14px] leading-6 font-medium ${
-					!$select ? 'text-[#A4ABB8] bg-[#F5F5F6] cursor-not-allowed' : 'bg-[#0CBFAD] text-white'
+				class={`normal-active-button ${
+					!$select
+						? 'text-[#A4ABB8] bg-[#F5F5F6] cursor-not-allowed'
+						: 'bg-[#0CBFAD] hover:bg-[#0AB0A0] text-white'
 				}`}
 				disabled={$select ? false : true}
 			>

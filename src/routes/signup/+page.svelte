@@ -131,7 +131,7 @@
 				<div>
 					<input
 						type="submit"
-						class="px-4 py-3 bg-[#0CBFAD] text-white text-[14px] font-medium leading-[24px] rounded-lg w-full cursor-pointer"
+						class="px-4 py-3 bg-[#0CBFAD] hover:bg-[#0cbfadda] duration-500 text-white text-[14px] font-medium leading-[24px] rounded-lg w-full cursor-pointer"
 						value="Sign Up"
 					/>
 				</div>
@@ -144,10 +144,5 @@
 				Already a member? <a href="/signin" class="text-[#0CBFAD]">Sign in now</a>
 			</span>
 		</div>
-		<!-- <div
-			class="xl:hidden absolute bottom-0 right-0 w-2/3 border-t-[16px] border-l-[16px] border-[#001638] rounded-tl-[32px]"
-		>
-			<img src={bg} alt="Bg" />
-		</div> -->
 	</div>
 </div>

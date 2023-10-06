@@ -16,8 +16,10 @@
 			/>
 			<div class="flex flex-row justify-end gap-4">
 				<button
-					class={`py-2 px-4 border rounded-lg text-center shadow-[0_3px_1px_-2px_#0000000F] border-[#CACFD5] text-[14px] leading-6 font-medium ${
-						!value ? 'text-[#A4ABB8] bg-[#F5F5F6] cursor-not-allowed' : 'bg-[#0CBFAD] text-white'
+					class={`normal-active-button ${
+						!value
+							? 'text-[#A4ABB8] bg-[#F5F5F6] cursor-not-allowed'
+							: 'bg-[#0CBFAD] hover:bg-[#0AB0A0] text-white'
 					}`}
 					disabled={value ? false : true}
 				>

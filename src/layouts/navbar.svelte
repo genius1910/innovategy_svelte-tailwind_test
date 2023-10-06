@@ -51,7 +51,6 @@
 			key: 'support'
 		}
 	];
-	console.log($page.url.pathname);
 </script>
 
 <div class="w-64 h-full flex flex-col pt-8 px-4">

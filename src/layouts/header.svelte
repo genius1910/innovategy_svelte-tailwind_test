@@ -39,7 +39,7 @@
 	<div
 		class={`absolute top-32 left-3 md:hidden ${
 			navState ? 'block' : 'hidden'
-		} bg-white rounded-lg pb-4 border-4 border-zinc-800`}
+		} bg-white rounded-lg pb-4 border border-zinc-800`}
 		role="button"
 		tabindex=""
 		on:click={() => {
@@ -95,7 +95,7 @@
 	<div
 		class={`absolute top-32 right-3 md:hidden ${
 			menuState ? 'block' : 'hidden'
-		} bg-white rounded-lg p-4 border-4 border-zinc-800 flex flex-col gap-4`}
+		} bg-white rounded-lg p-4 border border-zinc-800 flex flex-col gap-4`}
 		role="button"
 		tabindex=""
 		on:click={() => {

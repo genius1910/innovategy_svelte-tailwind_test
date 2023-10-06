@@ -25,7 +25,7 @@
 		</div>
 		<button
 			on:click={() => goto('/ideas/create')}
-			class="flex p-[19px] bg-[#FAFAFA] rounded-lg gap-[2px] items-center justify-center"
+			class="flex p-[19px] bg-[#FAFAFA] hover:bg-[#F0F0F0] duration-500 rounded-lg gap-[2px] items-center justify-center"
 		>
 			<img src={largePlus} alt="SvelteKit" />
 		</button>
